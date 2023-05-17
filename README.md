@@ -20,7 +20,7 @@ pcolor(x, y, data)
 ```
 ![pcolor_no_interp](https://github.com/mdmaas/pcolorplot.jl/assets/6352520/d02a5558-5487-4968-aaf0-37870a2bb473)
 
-![pcolor](https://github.com/mdmaas/pcolorplot.jl/assets/6352520/aa1b1204-350b-4a16-aa6b-9183af68e5fa)
+![pcolor_linear_interp](https://github.com/mdmaas/pcolorplot.jl/assets/6352520/c73483b6-d4d4-4c55-bd1d-41db6c10ae9f)
 
 **This repo is a work in progress**.
 
