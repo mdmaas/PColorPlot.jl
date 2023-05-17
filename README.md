@@ -18,13 +18,13 @@ pcolor(data, interp=:linear)
 pcolor(data, interp=:linear, ifactor=5)
 pcolor(x, y, data)
 ```
+![pcolor_no_interp](https://github.com/mdmaas/pcolorplot.jl/assets/6352520/d02a5558-5487-4968-aaf0-37870a2bb473)
 
 ![pcolor](https://github.com/mdmaas/pcolorplot.jl/assets/6352520/aa1b1204-350b-4a16-aa6b-9183af68e5fa)
 
+**This repo is a work in progress**.
 
-This repo is a work in progress.
-
-TO DO:
+**TO DO:**
 - Implement simple 2d cubic splines relying on the 1d case in DataInterpolations.jl, as that package seems better supported than Interpolations.jl, which doesn't have 2d splines anyway.
-- Possibly merge into Plots.jl
+- Possibly merge into Plots.jl ?
 - Register package ?
