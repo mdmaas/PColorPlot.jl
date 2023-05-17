@@ -19,6 +19,9 @@ pcolor(data, interp=:linear, ifactor=5)
 pcolor(x, y, data)
 ```
 
+![pcolor](https://github.com/mdmaas/pcolorplot.jl/assets/6352520/aa1b1204-350b-4a16-aa6b-9183af68e5fa)
+
+
 This repo is a work in progress.
 
 TO DO:
