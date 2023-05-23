@@ -16,14 +16,6 @@ pcolor(data, interpolate=:true, ifactor=5)
 # This should plot heatmap(data), but it doesn't plot anything
 pcolor(data)
 ```
-
-**TO DO:**
-- It would be nice if the oversampling factor could equal figure resolution / data resolution, so that the interpolated data has a number of pixels equal to the resolution.
-- Possibly merge into Plots.jl ?
-- Register package ?
-
-
-
 **Example**
 
 This is the standard heatmap
@@ -41,4 +33,7 @@ pcolor(data, interpolate=:true, ifactor=32)
 ![pcolor_no_interp](https://github.com/mdmaas/pcolor.jl/blob/main/cubic_interp.png)
 
 
-
+**TO DO:**
+- It would be nice if the oversampling factor could equal figure resolution / data resolution, so that the interpolated data has a number of pixels equal to the resolution.
+- Possibly merge into Plots.jl ?
+- Register package ?
