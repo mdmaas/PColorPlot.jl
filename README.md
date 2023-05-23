@@ -10,7 +10,7 @@ pcolor(x, y, data, interpolate=:true)
 pcolor(x, y, data, interpolate=:true, oversampling_factor = 5)  
 
 pcolor(data, interpolate=:true)                     
-pcolor(data, interpolate=:true, ifactor=5)         
+pcolor(data, interpolate=:true, oversampling_factor=5)         
 
 
 # This should plot heatmap(data), but it doesn't plot anything
@@ -28,7 +28,7 @@ heatmap(data)
 
 Using pcolor with interpolation:
 ```
-pcolor(data, interpolate=:true, ifactor=32)
+pcolor(data, interpolate=:true, oversampling_factor=32)
 ```
 ![pcolor_no_interp](https://github.com/mdmaas/pcolor.jl/blob/main/cubic_interp.png)
 
