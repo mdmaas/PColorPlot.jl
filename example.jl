@@ -10,13 +10,21 @@ end
 
 
 # This works
-pcolor(x, y, data)                                  # No interpolation
-pcolor(x, y, data, interpolate=:true)               # Interpolate x, y, data
-pcolor(x, y, data, interpolate=:true, ifactor=5)    # Same as before, with custom oversampling factor
+pcolor(x, y, data)                                  
+pcolor(x, y, data, interpolate=:true)                           
+pcolor(x, y, data, interpolate=:true, oversampling_factor = 5)  
 
-pcolor(data, interpolate=:true)                     # Interpolate 1:size(data,1), 1:size(data,2), data
-pcolor(data, interpolate=:true, ifactor=5)          # Same as before, with custom oversampling factor
+pcolor(data, interpolate=:true)                     
+pcolor(data, interpolate=:true, ifactor=5)         
 
 
-# This should be heatmap(data), but it doesn't plot anything
+# This should plot heatmap(data), but it doesn't plot anything
 pcolor(data)
+
+
+
+data = rand(15,10)
+heatmap(data)
+pcolor(data, interpolate=:true, ifactor=32)
+
+
