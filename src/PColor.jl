@@ -3,17 +3,14 @@ module PColor
 using Plots
 using Dierckx
 
-function cubic_interp_2d( x, y, data, oversampling_factor )
+function cubic_interp_2d( x, y, data, s )
 
     spl = Spline2D(y, x, data; kx=3, ky=3, s=0.0)
     
-    nx_fine = length(x) * oversampling_factor
-    ny_fine = length(y) * oversampling_factor
+    finerx = LinRange(x[1], x[end], s[1])
+    finery = LinRange(y[1], y[end], s[2])
 
-    finerx = LinRange(x[1], x[end], nx_fine)
-    finery = LinRange(y[1], y[end], ny_fine)
-
-    data_interp = Array{Float64}(undef, ny_fine, nx_fine)
+    data_interp = Array{Float64}(undef, s[2], s[1])
 
     for (i,yint) ∈ enumerate(finery), (j,xint) ∈ enumerate(finerx)
 
@@ -26,7 +23,7 @@ function cubic_interp_2d( x, y, data, oversampling_factor )
 end
 
 @userplot pcolor
-@recipe function f(h::pcolor; interpolate = :none, oversampling_factor = 8)
+@recipe function f(h::pcolor; interpolate = :none)
     if length(h.args) == 3
         x, y, z  = h.args
     elseif length(h.args) == 1
@@ -34,10 +31,13 @@ end
         x = 1:size(z,2)
         y = 1:size(z,1)
     end
+    
+    s = plotattributes[:plot_object].attr[:size]
+
     @series begin
         seriestype := :heatmap
         if interpolate == :true
-            x, y, z = cubic_interp_2d( x, y, z, oversampling_factor )
+            x, y, z = cubic_interp_2d( x, y, z, s )
         else
             x, y, z
         end
