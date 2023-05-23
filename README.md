@@ -1,4 +1,4 @@
-# pcolorplot.jl
+# PColor.jl
 Adding interpolated heatmaps to Plots.jl via a pcolor recipe
 
 **This is a work in progress**.
