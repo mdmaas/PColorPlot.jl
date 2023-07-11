@@ -6,8 +6,8 @@ usage:
 ```
 # All this works now
 pcolor(x, y, data)
-pcolor(x, y, data, interpolate=:true)
-pcolor(data, interpolate=:true)
+pcolor(x, y, data, interpolate = true)
+pcolor(data, interpolate = true)
 pcolor(data)
 ```
 **Example**
@@ -15,7 +15,7 @@ pcolor(data)
 This is the standard heatmap
 ```
 data = rand(15,10)
-heatmap(data)
+pcolor(data)
 ```
 ![pcolor_no_interp](https://github.com/mdmaas/pcolor.jl/blob/main/no_interp.png)
 
