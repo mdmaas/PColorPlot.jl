@@ -4,12 +4,10 @@ Adding interpolated heatmaps to Plots.jl via a pcolor recipe
 usage:
 
 ```
-# This works
+# All this works now
 pcolor(x, y, data)
 pcolor(x, y, data, interpolate=:true)
 pcolor(data, interpolate=:true)
-
-# This should plot heatmap(data), but it doesn't plot anything
 pcolor(data)
 ```
 **Example**
