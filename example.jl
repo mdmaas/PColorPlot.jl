@@ -16,9 +16,9 @@ pcolor(data, interpolate=:true)
 pcolor(data)
 
 
-data = rand(15,10)
-h1 = heatmap(data)
-h2 = pcolor(data, interpolate=:true)
+rand_data = rand(15,10)
+h1 = heatmap(rand_data)
+h2 = pcolor(rand_data, interpolate=:true)
 plot(h1, h2, layout=(2,1))
 
 

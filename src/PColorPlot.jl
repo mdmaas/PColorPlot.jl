@@ -26,23 +26,28 @@ end
 @recipe function f(h::PColor; interpolate = false)
     
     if length(h.args) == 3
+        println("3 args")
         x, y, z  = h.args
     elseif length(h.args) == 1
+        println("1 args")
         z = h.args[1]
         x = 1:size(z,2)
         y = 1:size(z,1)
     end
     
-    if interpolate
-        s = plotattributes[:plot_object].attr[:size]
-        x, y, z = cubic_interp_2d( x, y, z, s )
-    end
+
 
     @series begin
         seriestype := :heatmap
-        x := x
-        y := y
-        z := z
+        if interpolate
+            s = plotattributes[:plot_object].attr[:size]
+            x, y, z = cubic_interp_2d( x, y, z, s )
+        else
+            x := x
+            y := y
+            z := z
+        end
+
     end
     
 end
