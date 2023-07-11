@@ -26,10 +26,8 @@ end
 @recipe function f(h::PColor; interpolate = false)
     
     if length(h.args) == 3
-        println("3 args")
         x, y, z  = h.args
     elseif length(h.args) == 1
-        println("1 args")
         z = h.args[1]
         x = 1:size(z,2)
         y = 1:size(z,1)
