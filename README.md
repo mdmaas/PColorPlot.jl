@@ -31,7 +31,5 @@ pcolor(data, interpolate=:true)
 
 **TO DO:**
 
-- Fix `pcolor(data)` returning the data whithout plotting anything.
-- Currently we interpolate the data to the size of the whole figure, not just the plotarea, including axis, labels, more subplots if this is a layout, etc. This is slightly inefficient and should be fixed.
-- Register package ?
-- Possibly merge into Plots.jl ?
+- Currently we interpolate the data to the size of the whole figure, not just the plotarea, including axis, labels, more subplots if this is a layout, etc. This is slightly inefficient and should be fixed in the future, however I don't know how to do it, sice the when plot recipe gets called I believe it doesn't have access to the layout information.
+- Either register package or merge into Plots.jl ?
