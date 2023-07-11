@@ -5,13 +5,9 @@ usage:
 
 ```
 # This works
-pcolor(x, y, data)                                  
-pcolor(x, y, data, interpolate=:true)                           
-pcolor(x, y, data, interpolate=:true, oversampling_factor = 5)  
-
-pcolor(data, interpolate=:true)                     
-pcolor(data, interpolate=:true, oversampling_factor=5)         
-
+pcolor(x, y, data)
+pcolor(x, y, data, interpolate=:true)
+pcolor(data, interpolate=:true)
 
 # This should plot heatmap(data), but it doesn't plot anything
 pcolor(data)
@@ -26,14 +22,16 @@ heatmap(data)
 ![pcolor_no_interp](https://github.com/mdmaas/pcolor.jl/blob/main/no_interp.png)
 
 
-Using pcolor with interpolation:
+Plotting the same data, using pcolor with interpolation:
 ```
-pcolor(data, interpolate=:true, oversampling_factor=32)
+pcolor(data, interpolate=:true)
 ```
-![pcolor_no_interp](https://github.com/mdmaas/pcolor.jl/blob/main/cubic_interp.png)
+![pcolor_with_interp](https://github.com/mdmaas/pcolor.jl/blob/main/cubic_interp.png)
 
 
 **TO DO:**
-- It would be nice if the oversampling factor could equal figure resolution / data resolution, so that the interpolated data has a number of pixels equal to the resolution.
-- Possibly merge into Plots.jl ?
+
+- Fix `pcolor(data)` returning the data whithout plotting anything.
+- Currently we interpolate the data to the size of the whole figure, not just the plotarea, including axis, labels, more subplots if this is a layout, etc. This is slightly inefficient and should be fixed.
 - Register package ?
+- Possibly merge into Plots.jl ?

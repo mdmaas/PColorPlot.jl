@@ -1,5 +1,5 @@
 using Revise
-using Plots, PColor
+using Plots, PColorPlot
 
 x = -cos.(LinRange(0,π,55))
 y = -cos.(LinRange(0,π/2,80))
@@ -10,21 +10,15 @@ end
 
 
 # This works
-pcolor(x, y, data)                                  
-pcolor(x, y, data, interpolate=:true)                           
-pcolor(x, y, data, interpolate=:true, oversampling_factor = 5)  
-
-pcolor(data, interpolate=:true)                     
-pcolor(data, interpolate=:true, oversampling_factor=5)         
-
-
-# This should plot heatmap(data), but it doesn't plot anything
+pcolor(x, y, data)
+pcolor(x, y, data, interpolate=:true)
+pcolor(data, interpolate=:true)
 pcolor(data)
 
 
-
 data = rand(15,10)
-heatmap(data)
-pcolor(data, interpolate=:true, oversampling_factor=32)
+h1 = heatmap(data)
+h2 = pcolor(data, interpolate=:true)
+plot(h1, h2, layout=(2,1))
 
 

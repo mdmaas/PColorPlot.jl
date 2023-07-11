@@ -1,4 +1,4 @@
-module PColor
+module PColorPlot
 
 using Plots
 using Dierckx
@@ -22,8 +22,9 @@ function cubic_interp_2d( x, y, data, s )
     
 end
 
-@userplot pcolor
-@recipe function f(h::pcolor; interpolate = :none)
+@userplot PColor
+@recipe function f(h::PColor; interpolate = false)
+    
     if length(h.args) == 3
         x, y, z  = h.args
     elseif length(h.args) == 1
@@ -32,16 +33,19 @@ end
         y = 1:size(z,1)
     end
     
-    s = plotattributes[:plot_object].attr[:size]
+    if interpolate
+        s = plotattributes[:plot_object].attr[:size]
+        x, y, z = cubic_interp_2d( x, y, z, s )
+    end
 
     @series begin
         seriestype := :heatmap
-        if interpolate == :true
-            x, y, z = cubic_interp_2d( x, y, z, s )
-        else
-            x, y, z
-        end
+        x := x
+        y := y
+        z := z
     end
+    
 end
+
 
 end
