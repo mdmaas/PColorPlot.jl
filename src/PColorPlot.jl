@@ -35,8 +35,6 @@ end
         y = 1:size(z,1)
     end
     
-
-
     @series begin
         seriestype := :heatmap
         if interpolate

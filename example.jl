@@ -16,6 +16,8 @@ pcolor(data, interpolate=:true)
 pcolor(data)
 
 
+##
+
 rand_data = rand(15,10)
 h1 = heatmap(rand_data)
 h2 = pcolor(rand_data, interpolate=:true)
