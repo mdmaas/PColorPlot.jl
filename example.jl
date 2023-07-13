@@ -11,16 +11,14 @@ end
 
 # This works
 pcolor(x, y, data)
-pcolor(x, y, data, interpolate=:true)
-pcolor(data, interpolate=:true)
-pcolor(data)
-
+pcolor(x, y, data, interpolate=false)
+pcolor(data, interpolate=true)
 
 ##
 
 rand_data = rand(15,10)
 h1 = heatmap(rand_data)
-h2 = pcolor(rand_data, interpolate=:true)
+h2 = pcolor(rand_data, interpolate=true)
 plot(h1, h2, layout=(2,1))
 
 

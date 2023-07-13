@@ -39,9 +39,7 @@ end
             s = plotattributes[:plot_object].attr[:size]
             x, y, z = cubic_interp_2d( x, y, z, s )
         else
-            x := x
-            y := y
-            z := z
+            (x,y,z)
         end
 
     end
